@@ -82,5 +82,6 @@ public class Player : MonoBehaviour
     public void SetDetection(Detection detection)
     {
         canBeDetected = detection;
+        UIManager.Instance.SetDetectionText(canBeDetected);
     }
 }

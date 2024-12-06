@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum EnemyType
@@ -11,14 +9,16 @@ public enum EnemyType
 public class Enemy : MonoBehaviour
 {
     public EnemyType typeOfEnemy;
+    [Header("Turn Delay")]
+    [SerializeField] protected float turnDelay;
+    [Header("Places for Movement")]
     [SerializeField] protected Transform placeOne, placeTwo;
     protected Vector3 currentPosition;
     private Vector3 targetLocation, lookLeft, lookRight;
     private void Start()
     {
-        targetLocation = placeTwo.localPosition;
-        lookLeft = new Vector3(0, 180, 0);
-        lookRight = new Vector3(0, 180, 0);
+        lookLeft = new Vector3(-1, 1, 1);
+        lookRight = new Vector3(1, 1, 1);
     }
 
     protected void MovementEnemy(Transform firstPosition, Transform secondPosition, GameObject enemyObject, Vector3 currentPosition)
@@ -40,13 +40,17 @@ public class Enemy : MonoBehaviour
 
     public void EnemyTurn(GameObject enemyObject)
     {
-        enemyObject.transform.localEulerAngles = lookLeft;
+        Vector3 currentScale = enemyObject.transform.localScale;
 
-    }
-
-    IEnumerator LookAfter()
-    {
-        yield return new WaitForSeconds(3f);
-
+        if (currentScale.x >= 1)
+        {
+            currentScale.x = -1;
+            enemyObject.transform.localScale = currentScale;
+        }
+        else if (currentScale.x <= -1)
+        {
+            currentScale.x = 1;
+            enemyObject.transform.localScale = currentScale;
+        }
     }
 }
