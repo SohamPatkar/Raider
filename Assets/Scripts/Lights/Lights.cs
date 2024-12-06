@@ -21,7 +21,6 @@ public class Lights : MonoBehaviour
         if (playerScript != null)
         {
             playerScript.SetDetection(Detection.Detectable);
-            UIManager.Instance.SetDetectionText(Detection.Detectable);
         }
     }
 
@@ -31,7 +30,6 @@ public class Lights : MonoBehaviour
         if (playerScript != null)
         {
             playerScript.SetDetection(Detection.UnDetectable);
-            UIManager.Instance.SetDetectionText(Detection.UnDetectable);
         }
     }
 }
