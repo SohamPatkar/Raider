@@ -8,8 +8,8 @@ public class UIManager : MonoBehaviour
     [Header("Detection")]
     [SerializeField] private TextMeshProUGUI detectionText, treasureCollected;
     [Header("Game Over")]
-    [SerializeField] private GameObject gameOver, nextLevel;
-    [SerializeField] private Button playAgain, toMainMenu, nextLevelButton;
+    [SerializeField] private GameObject gameOver, nextLevel, gameWon;
+    [SerializeField] private Button playAgain, toMainMenu, nextLevelButton, gameWonMainMenu;
     private static UIManager instance;
     public static UIManager Instance { get { return instance; } }
     private void Awake()
@@ -32,6 +32,12 @@ public class UIManager : MonoBehaviour
         nextLevel.SetActive(false);
     }
 
+    public void SetGameWon()
+    {
+        gameWon.SetActive(true);
+        gameWonMainMenu.onClick.AddListener(OnToMainMenu);
+        Time.timeScale = 0;
+    }
     public void SetGameOver()
     {
         gameOver.SetActive(true);
@@ -67,6 +73,22 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnPlay()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void OnQuit()
+    {
+#if (UNITY_EDITOR)
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif (UNITY_STANDALONE) 
+    Application.Quit();
+#elif (UNITY_WEBGL)
+    Application.OpenURL("about:blank");
+#endif
     }
 
     void OnToMainMenu()

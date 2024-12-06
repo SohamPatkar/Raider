@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,10 +57,14 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        if (isTreasureCollected)
+        if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 1)
         {
             UIManager.Instance.ToNextLevel();
             Time.timeScale = 0;
+        }
+        else if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            UIManager.Instance.SetGameWon();
         }
         else
         {
