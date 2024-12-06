@@ -22,6 +22,7 @@ public class Guard : Enemy
             Player playerScript = other.gameObject.GetComponent<Player>();
             if (playerScript.ReturnDetection() == Detection.Detectable)
             {
+                SoundManager.Instance.PlaySfx(SoundType.Detected);
                 playerScript.SetDetection(Detection.Detected);
                 GameManager.Instance.OnDetected();
             }

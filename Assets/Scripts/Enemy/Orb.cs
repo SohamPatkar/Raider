@@ -22,6 +22,7 @@ public class Orb : Enemy
         if (other.gameObject.GetComponent<Player>() != null)
         {
             Player playerScript = other.gameObject.GetComponent<Player>();
+            SoundManager.Instance.PlaySfx(SoundType.Detected);
             playerScript.SetDetection(Detection.Detected);
             UIManager.Instance.SetDetectionText(playerScript.ReturnDetection());
             GameManager.Instance.OnDetected();

@@ -12,6 +12,7 @@ public class Treasure : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Player>() != null)
         {
+            SoundManager.Instance.PlaySfx(SoundType.CoinCollected);
             GameManager.Instance.CoinCollected(gameObject);
             Destroy(gameObject);
         }

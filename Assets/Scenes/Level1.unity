@@ -4460,6 +4460,10 @@ PrefabInstance:
       value: ---- Managers ----
       objectReference: {fileID: 0}
     - target: {fileID: 8396417948822027304, guid: 68f50e43565c1fd40b200f741616d60a, type: 3}
+      propertyPath: gameWon
+      value: 
+      objectReference: {fileID: 8822828379813969447}
+    - target: {fileID: 8396417948822027304, guid: 68f50e43565c1fd40b200f741616d60a, type: 3}
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 577243533}
@@ -4479,6 +4483,10 @@ PrefabInstance:
       propertyPath: detectionText
       value: 
       objectReference: {fileID: 339370363}
+    - target: {fileID: 8396417948822027304, guid: 68f50e43565c1fd40b200f741616d60a, type: 3}
+      propertyPath: gameWonMainMenu
+      value: 
+      objectReference: {fileID: 8822828379813969446}
     - target: {fileID: 8396417948822027304, guid: 68f50e43565c1fd40b200f741616d60a, type: 3}
       propertyPath: nextLevelButton
       value: 
@@ -5061,6 +5069,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9dce116590cef540a427c758ab9606b, type: 3}
+--- !u!114 &8822828379813969446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1297697004880600194, guid: e9dce116590cef540a427c758ab9606b, type: 3}
+  m_PrefabInstance: {fileID: 8822828379813969445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8822828379813969447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4426435339762332275, guid: e9dce116590cef540a427c758ab9606b, type: 3}
+  m_PrefabInstance: {fileID: 8822828379813969445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9003668169882037048
 PrefabInstance:
   m_ObjectHideFlags: 0
