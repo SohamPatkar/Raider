@@ -94,7 +94,7 @@ public class UIManager : MonoBehaviour
     void OnToMainMenu()
     {
         Time.timeScale = 1;
-        Debug.Log("Main Menu Pressed");
+        SceneManager.LoadScene(0);
     }
 
     public void SetDetectionText(Detection detectionType)
