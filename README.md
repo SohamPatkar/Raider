@@ -1,4 +1,4 @@
-#Dungeon Raider#
+#DUNGEON RAIDER
 
 Collect all the coins
 
