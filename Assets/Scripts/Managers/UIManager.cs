@@ -12,9 +12,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOver, nextLevel, gameWon;
     [SerializeField] private Button playAgain, toMainMenu, nextLevelButton, gameWonMainMenu;
 
-    public Action<TreasureState> onTreasureCollected;
-    public Action goToNextLevel;
+    #region actions
 
+    public Action<TreasureState> onTreasureCollected;
+    public Action<Detection> setDetectionText;
+    public Action goToNextLevel;
+    public Action gameWonAction;
+    public Action gameOverAction;
+
+    #endregion
 
     private static UIManager instance;
     public static UIManager Instance { get { return instance; } }
@@ -32,6 +38,12 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        Initialization();
+    }
+
+
+    private void Initialization()
+    {
         SetDetectionText(Detection.UnDetectable);
         gameOver.SetActive(false);
         SetTreasureCollected(TreasureState.NotCollected);
@@ -39,12 +51,9 @@ public class UIManager : MonoBehaviour
 
         onTreasureCollected += SetTreasureCollected;
         goToNextLevel += ToNextLevel;
-    }
-
-    private void OnDisable()
-    {
-        onTreasureCollected -= SetTreasureCollected;
-        goToNextLevel -= ToNextLevel;
+        gameWonAction += SetGameWon;
+        gameOverAction += SetGameOver;
+        setDetectionText += SetDetectionText;
     }
 
     public void SetGameWon()
@@ -116,4 +125,14 @@ public class UIManager : MonoBehaviour
     {
         detectionText.text = detectionType.ToString();
     }
+
+    private void OnDisable()
+    {
+        onTreasureCollected -= SetTreasureCollected;
+        goToNextLevel -= ToNextLevel;
+        gameWonAction -= SetGameWon;
+        gameOverAction -= SetGameOver;
+        setDetectionText -= SetDetectionText;
+    }
+
 }

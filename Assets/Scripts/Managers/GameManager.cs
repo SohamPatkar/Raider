@@ -66,17 +66,17 @@ public class GameManager : MonoBehaviour
         }
         else if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 2)
         {
-            UIManager.Instance.SetGameWon();
+            refToUIManager.gameWonAction.Invoke();
         }
         else
         {
-            UIManager.Instance.SetTreasureCollected(TreasureState.NotCollected);
+            refToUIManager.onTreasureCollected.Invoke(TreasureState.NotCollected);
         }
     }
 
     public void OnDetected()
     {
-        UIManager.Instance.SetGameOver();
+        refToUIManager.gameOverAction.Invoke();
         Time.timeScale = 0;
     }
 }
