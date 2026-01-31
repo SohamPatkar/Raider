@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Treasure")]
     [SerializeField] private List<GameObject> Treasure = new List<GameObject>();
+    [SerializeField] private UIManager refToUIManager;
     private bool isTreasureCollected;
     private float timer;
     private static GameManager instance;
@@ -48,9 +49,10 @@ public class GameManager : MonoBehaviour
     public void CoinCollected(GameObject gameObject)
     {
         Treasure.Remove(gameObject);
+
         if (Treasure.Count == 0)
         {
-            UIManager.Instance.SetTreasureCollected(TreasureState.Collected);
+            refToUIManager.onTreasureCollected.Invoke(TreasureState.Collected);
             isTreasureCollected = true;
         }
     }
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 1)
         {
-            UIManager.Instance.ToNextLevel();
+            refToUIManager.goToNextLevel.Invoke();
             Time.timeScale = 0;
         }
         else if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 2)

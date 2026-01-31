@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,11 @@ public class UIManager : MonoBehaviour
     [Header("Game Over")]
     [SerializeField] private GameObject gameOver, nextLevel, gameWon;
     [SerializeField] private Button playAgain, toMainMenu, nextLevelButton, gameWonMainMenu;
+
+    public Action<TreasureState> onTreasureCollected;
+    public Action goToNextLevel;
+
+
     private static UIManager instance;
     public static UIManager Instance { get { return instance; } }
     private void Awake()
@@ -30,6 +36,15 @@ public class UIManager : MonoBehaviour
         gameOver.SetActive(false);
         SetTreasureCollected(TreasureState.NotCollected);
         nextLevel.SetActive(false);
+
+        onTreasureCollected += SetTreasureCollected;
+        goToNextLevel += ToNextLevel;
+    }
+
+    private void OnDisable()
+    {
+        onTreasureCollected -= SetTreasureCollected;
+        goToNextLevel -= ToNextLevel;
     }
 
     public void SetGameWon()
@@ -45,7 +60,7 @@ public class UIManager : MonoBehaviour
         toMainMenu.onClick.AddListener(OnToMainMenu);
     }
 
-    public void ToNextLevel()
+    private void ToNextLevel()
     {
         nextLevel.SetActive(true);
         nextLevelButton.onClick.AddListener(OnNextLevelButton);
