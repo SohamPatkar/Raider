@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
 
+    private EventsService eventsService;
+
     private void Awake()
     {
         if (instance == null)
@@ -44,6 +46,12 @@ public class GameManager : MonoBehaviour
     {
         timer = 0;
         isTreasureCollected = false;
+        eventsService = new EventsService();
+    }
+
+    public EventsService GetEventService()
+    {
+        return eventsService;
     }
 
     public void CoinCollected(GameObject gameObject)
@@ -52,7 +60,7 @@ public class GameManager : MonoBehaviour
 
         if (Treasure.Count == 0)
         {
-            refToUIManager.onTreasureCollected.Invoke(TreasureState.Collected);
+            GameManager.Instance.GetEventService().onTreasureCollected.Invoke(TreasureState.Collected);
             isTreasureCollected = true;
         }
     }
@@ -61,22 +69,22 @@ public class GameManager : MonoBehaviour
     {
         if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 1)
         {
-            refToUIManager.goToNextLevel.Invoke();
+            GameManager.Instance.GetEventService().goToNextLevel.Invoke();
             Time.timeScale = 0;
         }
         else if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 2)
         {
-            refToUIManager.gameWonAction.Invoke();
+            GameManager.Instance.GetEventService().gameWonAction.Invoke();
         }
         else
         {
-            refToUIManager.onTreasureCollected.Invoke(TreasureState.NotCollected);
+            GameManager.Instance.GetEventService().onTreasureCollected.Invoke(TreasureState.NotCollected);
         }
     }
 
     public void OnDetected()
     {
-        refToUIManager.gameOverAction.Invoke();
+        GameManager.Instance.GetEventService().gameOverAction.Invoke();
         Time.timeScale = 0;
     }
 }

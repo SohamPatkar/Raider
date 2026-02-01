@@ -12,16 +12,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOver, nextLevel, gameWon;
     [SerializeField] private Button playAgain, toMainMenu, nextLevelButton, gameWonMainMenu;
 
-    #region actions
-
-    public Action<TreasureState> onTreasureCollected;
-    public Action<Detection> setDetectionText;
-    public Action goToNextLevel;
-    public Action gameWonAction;
-    public Action gameOverAction;
-
-    #endregion
-
     private static UIManager instance;
     public static UIManager Instance { get { return instance; } }
     private void Awake()
@@ -41,7 +31,6 @@ public class UIManager : MonoBehaviour
         Initialization();
     }
 
-
     private void Initialization()
     {
         SetDetectionText(Detection.UnDetectable);
@@ -49,11 +38,11 @@ public class UIManager : MonoBehaviour
         SetTreasureCollected(TreasureState.NotCollected);
         nextLevel.SetActive(false);
 
-        onTreasureCollected += SetTreasureCollected;
-        goToNextLevel += ToNextLevel;
-        gameWonAction += SetGameWon;
-        gameOverAction += SetGameOver;
-        setDetectionText += SetDetectionText;
+        GameManager.Instance.GetEventService().onTreasureCollected += SetTreasureCollected;
+        GameManager.Instance.GetEventService().goToNextLevel += ToNextLevel;
+        GameManager.Instance.GetEventService().gameWonAction += SetGameWon;
+        GameManager.Instance.GetEventService().gameOverAction += SetGameOver;
+        GameManager.Instance.GetEventService().setDetectionText += SetDetectionText;
     }
 
     public void SetGameWon()
@@ -128,11 +117,11 @@ public class UIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        onTreasureCollected -= SetTreasureCollected;
-        goToNextLevel -= ToNextLevel;
-        gameWonAction -= SetGameWon;
-        gameOverAction -= SetGameOver;
-        setDetectionText -= SetDetectionText;
+        GameManager.Instance.GetEventService().onTreasureCollected -= SetTreasureCollected;
+        GameManager.Instance.GetEventService().goToNextLevel -= ToNextLevel;
+        GameManager.Instance.GetEventService().gameWonAction -= SetGameWon;
+        GameManager.Instance.GetEventService().gameOverAction -= SetGameOver;
+        GameManager.Instance.GetEventService().setDetectionText -= SetDetectionText;
     }
 
 }
