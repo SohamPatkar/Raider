@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -984,350 +985,398 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 477021400
+    uuid:
+      value0: 3647055416
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -647911880
     name: Soldier
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Soldier_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 4fc8a406bc0ea87459bb9584a529d32b
-    - name: Soldier_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 19
         height: 29
       spriteId: 2941966eae9944048951bcde061e2521
-    - name: Soldier_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 40
         width: 18
         height: 28
       spriteId: cc85bfd59581340418bec469e7a57763
-    - name: Soldier_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 42
         y: 40
         width: 28
         height: 24
       spriteId: aa2e6a7a92a338f419044d5ee8135f28
-    - name: Soldier_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 45
         y: 40
         width: 16
         height: 17
       spriteId: 2ac25449f0b39894a8613e50e043b3bd
-    - name: Soldier_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 46
         y: 40
         width: 22
         height: 13
       spriteId: 040bd9f275d67d844ace2e628c0f91c8
-    - name: Soldier_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 3fa7c29ced3516e4ca7b1e7ea07fb117
-    - name: Soldier_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 22
       spriteId: af81e7f7de7e3824ba15c42756067ff4
-    - name: Soldier_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 22
       spriteId: 556015a6dd5303a4c9d299a728a5c9c7
-    - name: Soldier_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 4cda6ac1ec017cc49a495a6f031a4f54
-    - name: Soldier_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 93f48bc633814d24f9e8b9acd4bf0ce5
-    - name: Soldier_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 1a651270001e1164cae9bac2c441fbc4
-    - name: Soldier_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 22
       spriteId: e5216894e8d421944a9063efd889f40b
-    - name: Soldier_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 9822b03f42403d04b990b3931efcb0b2
-    - name: Soldier_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 20
       spriteId: f1387796b6281b247995668e1294f4e2
-    - name: Soldier_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 00bcfef09195b1843af73298cbcd9a3f
-    - name: Soldier_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 22
       spriteId: db80b9a056034584cae6200dd3521f59
-    - name: Soldier_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 0f8c35334eb3af342b349c450b832e34
-    - name: Soldier_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 20
       spriteId: 9273e85add3df5f4aa83ef86442fb9ed
-    - name: Soldier_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 95f231830e79682478f1f0c716027cca
-    - name: Soldier_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 19
         height: 27
       spriteId: e850148f9e334214eb755a504ad9c661
-    - name: Soldier_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 20
         height: 26
       spriteId: 68b02a6730ff01747b5c6e9584d2dfc3
-    - name: Soldier_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 36
         y: 40
         width: 34
         height: 20
       spriteId: 75eec284d3168eb4b9bf75ad025ae5bb
-    - name: Soldier_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 36
         y: 40
         width: 34
         height: 20
       spriteId: e65a00ee97f094242875a6b73a1e87b5
-    - name: Soldier_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 36
         y: 40
         width: 22
         height: 20
       spriteId: 5d18b09c6d9dd334b928f1d2639bea15
-    - name: Soldier_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 7610cd546397e5d4f90bcc7ff54749d0
-    - name: Soldier_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 42
         y: 40
         width: 28
         height: 18
       spriteId: e6d95f1a19480354eb0075faba95ad15
-    - name: Soldier_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 42
         y: 40
         width: 28
         height: 19
       spriteId: 17155e2c1d5d33349bdfcc590046ea36
-    - name: Soldier_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 19
         height: 21
       spriteId: 69710709e00424247a525e681c261990
-    - name: Soldier_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: 25a7e2694ce4d114d9c3c0f21cf5de0c
-    - name: Soldier_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 22
       spriteId: 306e453a883f6fb4aa049f346c370b3c
-    - name: Soldier_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: f43d9387ea72a624dae19393f6ec6e11
-    - name: Soldier_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 22
         height: 21
       spriteId: b2c7b5f9b303bea4094db6fb7fdbe4e7
-    - name: Soldier_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 21
         height: 20
       spriteId: 5c5e2a7315896f74d8ae6b43240affbc
-    - name: Soldier_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 20
         height: 20
       spriteId: e1c750926e52bce4caa5fe6886d132cd
-    - name: Soldier_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 36
         height: 21
       spriteId: 0aa44471b976d5740acd15058c44da94
-    - name: Soldier_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 23
         height: 21
       spriteId: be2731b4f74916e4393954956d016007
-    - name: Soldier_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 40
         y: 40
         width: 18
         height: 21
       spriteId: 2c977afbe4c378947b68eadd3fc6cb1c
-    - name: Soldier_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 40
         y: 40
         width: 18
         height: 21
       spriteId: cd64f10bb6e0ca44da81237b4e6ff78b
-    - name: Soldier_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 40
         y: 40
         width: 18
         height: 21
       spriteId: 4fbbfb882c7b7f640a37233cd4164014
-    - name: Soldier_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 40
         y: 40
         width: 18
         height: 21
       spriteId: da1f8af13e2ed704988d41b120056b0c
-    - name: Soldier_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
         width: 17
         height: 21
       spriteId: b1a63ff9a4cdae443bf264ef0a2dee87
-    - name: Soldier_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 40
@@ -1341,3 +1390,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 100, y: 100}
+  previousTextureSize: {x: 256, y: 256}
