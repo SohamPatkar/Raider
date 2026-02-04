@@ -6,10 +6,13 @@ public class GameManager : MonoBehaviour
 {
     [Header("Treasure")]
     [SerializeField] private List<GameObject> Treasure = new List<GameObject>();
+    [SerializeField] private UIManager refToUIManager;
     private bool isTreasureCollected;
     private float timer;
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
+
+    private EventsService eventsService;
 
     private void Awake()
     {
@@ -43,14 +46,21 @@ public class GameManager : MonoBehaviour
     {
         timer = 0;
         isTreasureCollected = false;
+        eventsService = new EventsService();
+    }
+
+    public EventsService GetEventService()
+    {
+        return eventsService;
     }
 
     public void CoinCollected(GameObject gameObject)
     {
         Treasure.Remove(gameObject);
+
         if (Treasure.Count == 0)
         {
-            UIManager.Instance.SetTreasureCollected(TreasureState.Collected);
+            GameManager.Instance.GetEventService().onTreasureCollected.Invoke(TreasureState.Collected);
             isTreasureCollected = true;
         }
     }
@@ -59,22 +69,22 @@ public class GameManager : MonoBehaviour
     {
         if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 1)
         {
-            UIManager.Instance.ToNextLevel();
+            GameManager.Instance.GetEventService().goToNextLevel.Invoke();
             Time.timeScale = 0;
         }
         else if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 2)
         {
-            UIManager.Instance.SetGameWon();
+            GameManager.Instance.GetEventService().gameWonAction.Invoke();
         }
         else
         {
-            UIManager.Instance.SetTreasureCollected(TreasureState.NotCollected);
+            GameManager.Instance.GetEventService().onTreasureCollected.Invoke(TreasureState.NotCollected);
         }
     }
 
     public void OnDetected()
     {
-        UIManager.Instance.SetGameOver();
+        GameManager.Instance.GetEventService().gameOverAction.Invoke();
         Time.timeScale = 0;
     }
 }

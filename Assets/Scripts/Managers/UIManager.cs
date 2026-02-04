@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class UIManager : MonoBehaviour
     [Header("Game Over")]
     [SerializeField] private GameObject gameOver, nextLevel, gameWon;
     [SerializeField] private Button playAgain, toMainMenu, nextLevelButton, gameWonMainMenu;
+
     private static UIManager instance;
     public static UIManager Instance { get { return instance; } }
     private void Awake()
@@ -26,10 +28,21 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        Initialization();
+    }
+
+    private void Initialization()
+    {
         SetDetectionText(Detection.UnDetectable);
         gameOver.SetActive(false);
         SetTreasureCollected(TreasureState.NotCollected);
         nextLevel.SetActive(false);
+
+        GameManager.Instance.GetEventService().onTreasureCollected += SetTreasureCollected;
+        GameManager.Instance.GetEventService().goToNextLevel += ToNextLevel;
+        GameManager.Instance.GetEventService().gameWonAction += SetGameWon;
+        GameManager.Instance.GetEventService().gameOverAction += SetGameOver;
+        GameManager.Instance.GetEventService().setDetectionText += SetDetectionText;
     }
 
     public void SetGameWon()
@@ -45,7 +58,7 @@ public class UIManager : MonoBehaviour
         toMainMenu.onClick.AddListener(OnToMainMenu);
     }
 
-    public void ToNextLevel()
+    private void ToNextLevel()
     {
         nextLevel.SetActive(true);
         nextLevelButton.onClick.AddListener(OnNextLevelButton);
@@ -101,4 +114,14 @@ public class UIManager : MonoBehaviour
     {
         detectionText.text = detectionType.ToString();
     }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.GetEventService().onTreasureCollected -= SetTreasureCollected;
+        GameManager.Instance.GetEventService().goToNextLevel -= ToNextLevel;
+        GameManager.Instance.GetEventService().gameWonAction -= SetGameWon;
+        GameManager.Instance.GetEventService().gameOverAction -= SetGameOver;
+        GameManager.Instance.GetEventService().setDetectionText -= SetDetectionText;
+    }
+
 }

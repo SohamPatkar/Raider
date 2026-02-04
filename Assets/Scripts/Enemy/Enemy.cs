@@ -11,10 +11,13 @@ public class Enemy : MonoBehaviour
     public EnemyType typeOfEnemy;
     [Header("Turn Delay")]
     [SerializeField] protected float turnDelay;
+
     [Header("Places for Movement")]
     [SerializeField] protected Transform placeOne, placeTwo;
+
     protected Vector3 currentPosition;
     private Vector3 targetLocation, lookLeft, lookRight;
+
     private void Start()
     {
         lookLeft = new Vector3(-1, 1, 1);
