@@ -44,9 +44,15 @@ public class GameManager : MonoBehaviour
 
     void InitializeGame()
     {
+        Global.Init();
+
         timer = 0;
         isTreasureCollected = false;
         eventsService = new EventsService();
+
+        refToUIManager.Initialization();
+
+        eventsService.setGameDeviceText?.Invoke(Global.IsMobile.ToString());
     }
 
     public EventsService GetEventService()
@@ -69,22 +75,22 @@ public class GameManager : MonoBehaviour
     {
         if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 1)
         {
-            GameManager.Instance.GetEventService().goToNextLevel.Invoke();
+            eventsService.goToNextLevel.Invoke();
             Time.timeScale = 0;
         }
         else if (isTreasureCollected && SceneManager.GetActiveScene().buildIndex == 2)
         {
-            GameManager.Instance.GetEventService().gameWonAction.Invoke();
+            eventsService.gameWonAction.Invoke();
         }
         else
         {
-            GameManager.Instance.GetEventService().onTreasureCollected.Invoke(TreasureState.NotCollected);
+            eventsService.onTreasureCollected.Invoke(TreasureState.NotCollected);
         }
     }
 
     public void OnDetected()
     {
-        GameManager.Instance.GetEventService().gameOverAction.Invoke();
+        eventsService.gameOverAction.Invoke();
         Time.timeScale = 0;
     }
 }

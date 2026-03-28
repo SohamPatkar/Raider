@@ -243,61 +243,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11600512}
   m_CullTransparentMesh: 1
---- !u!1 &275679490
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 275679491}
-  - component: {fileID: 275679492}
-  m_Layer: 0
-  m_Name: MainMenuManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &275679491
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275679490}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &275679492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275679490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 731562b6b33e797409a5746363265a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionText: {fileID: 0}
-  treasureCollected: {fileID: 0}
-  gameOver: {fileID: 0}
-  nextLevel: {fileID: 0}
-  gameWon: {fileID: 0}
-  playAgain: {fileID: 0}
-  toMainMenu: {fileID: 0}
-  nextLevelButton: {fileID: 0}
-  gameWonMainMenu: {fileID: 0}
-  playGame: {fileID: 11600514}
-  quitGame: {fileID: 1683369409}
 --- !u!1 &375230350
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +724,6 @@ GameObject:
   m_Component:
   - component: {fileID: 682254650}
   - component: {fileID: 682254651}
-  - component: {fileID: 682254652}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -825,18 +769,6 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 55a3f528914fc0a4da8139b383494269, type: 3}
   musicSource: {fileID: 1763641059}
   sfxSource: {fileID: 375230352}
---- !u!114 &682254652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682254649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ca919b7fb30a4e43b39220ed5f8bdaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &745564222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +950,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1280806451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280806453}
+  - component: {fileID: 1280806454}
+  m_Layer: 0
+  m_Name: MainMenuUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1280806453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280806451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 527.0572, y: 254.11974, z: 0.43255568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280806454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280806451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 731562b6b33e797409a5746363265a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playGame: {fileID: 11600514}
+  quitGame: {fileID: 1683369409}
 --- !u!1 &1418648753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1493,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1267839194}
   - {fileID: 2087138121}
-  - {fileID: 275679491}
   - {fileID: 682254650}
   - {fileID: 1418648755}
+  - {fileID: 1280806453}
