@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [Header("Game Over")]
     [SerializeField] private GameObject gameOver, nextLevel, gameWon;
     [SerializeField] private Button playAgain, toMainMenu, nextLevelButton, gameWonMainMenu;
-
+    [SerializeField] private TextMeshProUGUI gameDeviceText;
     private static UIManager instance;
     public static UIManager Instance { get { return instance; } }
     private void Awake()
@@ -26,12 +26,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        Initialization();
-    }
-
-    private void Initialization()
+    public void Initialization()
     {
         SetDetectionText(Detection.UnDetectable);
         gameOver.SetActive(false);
@@ -43,6 +38,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.GetEventService().gameWonAction += SetGameWon;
         GameManager.Instance.GetEventService().gameOverAction += SetGameOver;
         GameManager.Instance.GetEventService().setDetectionText += SetDetectionText;
+        GameManager.Instance.GetEventService().setGameDeviceText += SetGameDeviceText;
     }
 
     public void SetGameWon()
@@ -51,6 +47,12 @@ public class UIManager : MonoBehaviour
         gameWonMainMenu.onClick.AddListener(OnToMainMenu);
         Time.timeScale = 0;
     }
+
+    public void SetGameDeviceText(string device)
+    {
+        gameDeviceText.text = device;
+    }
+
     public void SetGameOver()
     {
         gameOver.SetActive(true);
@@ -122,6 +124,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.GetEventService().gameWonAction -= SetGameWon;
         GameManager.Instance.GetEventService().gameOverAction -= SetGameOver;
         GameManager.Instance.GetEventService().setDetectionText -= SetDetectionText;
+        GameManager.Instance.GetEventService().setGameDeviceText -= SetGameDeviceText;
     }
 
 }
