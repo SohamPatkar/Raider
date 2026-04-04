@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -370,9 +371,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5325528484318179607, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
-      propertyPath: turnDelay
-      value: 1.5
+    - target: {fileID: 3667846028343050213, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5599283891736215007, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
       propertyPath: m_Name
@@ -1943,8 +1944,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5325528484318179607, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
-      propertyPath: turnDelay
+    - target: {fileID: 2796314288914782259, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
+      propertyPath: m_Size.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796314288914782259, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
+      propertyPath: m_Size.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796314288914782259, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667846028343050213, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
+      propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5599283891736215007, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
@@ -2004,9 +2017,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5325528484318179607, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
-      propertyPath: turnDelay
-      value: 3
+    - target: {fileID: 3667846028343050213, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5599283891736215007, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
       propertyPath: m_Name
@@ -2969,9 +2982,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5325528484318179607, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
-      propertyPath: turnDelay
-      value: 3
+    - target: {fileID: 3667846028343050213, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5599283891736215007, guid: 4d24c36ea6924914d866a5f947c81e67, type: 3}
       propertyPath: m_Name

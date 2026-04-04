@@ -9,14 +9,25 @@ public enum Detection
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Joystick gameController;
     private PlayerAnimations playerAnimations;
     private int score;
     private float movementSpeed;
     private float horizontalMovement, verticalMovement;
     private Vector3 turnLeft, turnRight;
     private Detection canBeDetected;
-    private void Awake()
+
+    void Start()
     {
+        if (Global.IsMobile == GameDevice.Mobile)
+        {
+            gameController.gameObject.SetActive(true);
+        }
+        else
+        {
+            gameController.gameObject.SetActive(false);
+        }
+
         InitializePlayer();
     }
 
@@ -38,18 +49,27 @@ public class Player : MonoBehaviour
 
     void Movement()
     {
-        horizontalMovement = Input.GetAxis("Horizontal");
-        verticalMovement = Input.GetAxis("Vertical");
-
-        if (horizontalMovement != 0)
+        if (Global.IsMobile != GameDevice.Mobile)
         {
-            playerAnimations.PlayWalking(horizontalMovement);
-            verticalMovement = 0;
+            horizontalMovement = Input.GetAxisRaw("Horizontal");
+            verticalMovement = Input.GetAxisRaw("Vertical");
         }
-        else if (verticalMovement != 0)
+        else if (Global.IsMobile == GameDevice.Mobile)
         {
-            playerAnimations.PlayWalking(verticalMovement);
+            //for mobile
+            horizontalMovement = gameController.Horizontal;
+            verticalMovement = gameController.Vertical;
+        }
+
+        if (Mathf.Abs(horizontalMovement) > 0.2f)
+        {
+            verticalMovement = 0;
+            playerAnimations.PlayWalking(horizontalMovement);
+        }
+        else if (Mathf.Abs(verticalMovement) > 0.2f)
+        {
             horizontalMovement = 0;
+            playerAnimations.PlayWalking(verticalMovement);
         }
 
         transform.position += new Vector3(horizontalMovement * movementSpeed * Time.deltaTime, verticalMovement * movementSpeed * Time.deltaTime, 0);
