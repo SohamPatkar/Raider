@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5753641766436725264, guid: e9dce116590cef540a427c758ab9606b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6556852992316996956, guid: e9dce116590cef540a427c758ab9606b, type: 3}
       propertyPath: m_text
       value: You Won
@@ -323,6 +327,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &101827477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5753641766436725264, guid: e9dce116590cef540a427c758ab9606b, type: 3}
+  m_PrefabInstance: {fileID: 101827475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &260326129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2165,6 +2174,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 9999
       objectReference: {fileID: 0}
+    - target: {fileID: 4990530117393223805, guid: 8716ae1103a141a4b98f7caf01d1255c, type: 3}
+      propertyPath: mobileController
+      value: 
+      objectReference: {fileID: 101827477}
     - target: {fileID: 5181013742588113713, guid: 8716ae1103a141a4b98f7caf01d1255c, type: 3}
       propertyPath: m_Constraints
       value: 4

@@ -1,13 +1,13 @@
 using System;
 using UnityEngine;
 
-public class PlayerAnimations : Player
+public class PlayerAnimations
 {
     private Animator playerAnimator;
 
-    private void Start()
+    public PlayerAnimations(Animator animator)
     {
-        playerAnimator = GetComponent<Animator>();
+        playerAnimator = animator;
     }
 
     public void PlayWalking(float movement)

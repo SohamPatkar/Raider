@@ -68,7 +68,7 @@ public class GameManager : SingleTonManager<GameManager>
 
         if (Treasure.Count == 0)
         {
-            GameManager.Instance.GetEventService().onTreasureCollected.Invoke(TreasureState.Collected);
+            GetEventService().onTreasureCollected.Invoke(TreasureState.Collected);
             isTreasureCollected = true;
         }
     }

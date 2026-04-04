@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Services
 {
-    public class SingleTonManager<T> : MonoBehaviour where T : class
+    public class SingleTonManager<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T instance;
         public static T Instance { get { return instance; } }

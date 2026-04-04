@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum Detection
 {
@@ -9,23 +10,26 @@ public enum Detection
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Joystick gameController;
-    private PlayerAnimations playerAnimations;
+    [SerializeField] private InputActionReference gameController;
+    [SerializeField] private GameObject mobileController;
     private int score;
     private float movementSpeed;
     private float horizontalMovement, verticalMovement;
     private Vector3 turnLeft, turnRight;
     private Detection canBeDetected;
+    private PlayerAnimations playerAnim;
 
     void Start()
     {
+        playerAnim = new PlayerAnimations(GetComponent<Animator>());
+
         if (Global.IsMobile == GameDevice.Mobile)
         {
-            gameController.gameObject.SetActive(true);
+            mobileController.SetActive(true);
         }
         else
         {
-            gameController.gameObject.SetActive(false);
+            mobileController.SetActive(false);
         }
 
         InitializePlayer();
@@ -41,7 +45,6 @@ public class Player : MonoBehaviour
     {
         turnLeft = new Vector3(0, 180, 0);
         turnRight = new Vector3(0, 0, 0);
-        playerAnimations = GetComponent<PlayerAnimations>();
         canBeDetected = Detection.UnDetectable;
         score = 0;
         movementSpeed = 1.5f;
@@ -57,22 +60,12 @@ public class Player : MonoBehaviour
         else if (Global.IsMobile == GameDevice.Mobile)
         {
             //for mobile
-            horizontalMovement = gameController.Horizontal;
-            verticalMovement = gameController.Vertical;
-        }
-
-        if (Mathf.Abs(horizontalMovement) > 0.2f)
-        {
-            verticalMovement = 0;
-            playerAnimations.PlayWalking(horizontalMovement);
-        }
-        else if (Mathf.Abs(verticalMovement) > 0.2f)
-        {
-            horizontalMovement = 0;
-            playerAnimations.PlayWalking(verticalMovement);
+            horizontalMovement = gameController.action.ReadValue<Vector2>().x;
+            verticalMovement = gameController.action.ReadValue<Vector2>().y;
         }
 
         transform.position += new Vector3(horizontalMovement * movementSpeed * Time.deltaTime, verticalMovement * movementSpeed * Time.deltaTime, 0);
+        playerAnim.PlayWalking(horizontalMovement);
 
         TurnPlayer();
     }

@@ -6,6 +6,7 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     public RectTransform handle;
     private Vector2 inputVector;
     private Vector2 handleVector;
+    private Vector3 inputVector3;
 
     public float Horizontal => inputVector.x;
     public float Vertical => inputVector.y;
@@ -22,25 +23,7 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
 
     public void OnDrag(PointerEventData eventData)
     {
-        Vector2 pos;
-
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            transform as RectTransform,
-            eventData.position,
-            eventData.pressEventCamera,
-            out pos
-        );
-
-        pos.x /= ((RectTransform)transform).sizeDelta.x;
-        pos.y /= ((RectTransform)transform).sizeDelta.y;
-
-        inputVector = new Vector2(pos.x * 2, pos.y * 2);
-        inputVector = (inputVector.magnitude > 1) ? inputVector.normalized : inputVector;
-
-        handle.anchoredPosition = new Vector2(
-            inputVector.x * (((RectTransform)transform).sizeDelta.x / 3),
-            inputVector.y * (((RectTransform)transform).sizeDelta.y / 3)
-        );
+        handle.position = eventData.position;
     }
 
     public void OnPointerUp(PointerEventData eventData)
