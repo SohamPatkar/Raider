@@ -6,9 +6,18 @@ public class MainMenuUI : MonoBehaviour
 {
     [Header("Main Menu")]
     [SerializeField] private Button playGame, quitGame;
+    [SerializeField] private Button settingsButton;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject settingsMenu;
     void Start()
     {
         playGame.onClick.AddListener(OnPlay);
+
+        settingsButton.onClick.AddListener(() => {
+            mainMenu.SetActive(false);
+            settingsMenu.SetActive(true);
+        });
+        
         quitGame.onClick.AddListener(OnQuit);
     }
 
