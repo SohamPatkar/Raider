@@ -11,23 +11,8 @@ public class GameManager : SingleTonManager<GameManager>
     [SerializeField] private UIManager refToUIManager;
     private bool isTreasureCollected;
     private float timer;
-    // private static GameManager instance;
-    // public static GameManager Instance { get { return instance; } }
-
     private EventsService eventsService;
-
-    // private void Awake()
-    // {
-    //     if (instance == null)
-    //     {
-    //         instance = this;
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
-
+    
     private void Start()
     {
         InitializeGame();
