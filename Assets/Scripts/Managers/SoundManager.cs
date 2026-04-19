@@ -59,6 +59,16 @@ public class SoundManager : MonoBehaviour
         return sound.audioClip;
     }
 
+    public AudioSource GetSfx()
+    {
+        return sfxSource;
+    }
+
+    public AudioSource GetMusic()
+    {
+        return musicSource;
+    }
+
     public void PlaySfx(SoundType soundType)
     {
         AudioClip musicClip = GetClip(soundType);
