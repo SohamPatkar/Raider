@@ -12,6 +12,5 @@ public class EventsService
 
     public EventsService()
     {
-
     }
 }

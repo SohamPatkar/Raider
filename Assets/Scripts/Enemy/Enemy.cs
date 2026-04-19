@@ -8,7 +8,10 @@ public enum EnemyType
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy")]
     public EnemyType typeOfEnemy;
+
+
     [Header("Turn Delay")]
     [SerializeField] protected float turnDelay;
 

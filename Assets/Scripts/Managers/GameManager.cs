@@ -1,30 +1,32 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Services;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingleTonManager<GameManager>
 {
     [Header("Treasure")]
     [SerializeField] private List<GameObject> Treasure = new List<GameObject>();
     [SerializeField] private UIManager refToUIManager;
     private bool isTreasureCollected;
     private float timer;
-    private static GameManager instance;
-    public static GameManager Instance { get { return instance; } }
+    // private static GameManager instance;
+    // public static GameManager Instance { get { return instance; } }
 
     private EventsService eventsService;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    // private void Awake()
+    // {
+    //     if (instance == null)
+    //     {
+    //         instance = this;
+    //     }
+    //     else
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 
     private void Start()
     {
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour
 
         if (Treasure.Count == 0)
         {
-            GameManager.Instance.GetEventService().onTreasureCollected.Invoke(TreasureState.Collected);
+            GetEventService().onTreasureCollected.Invoke(TreasureState.Collected);
             isTreasureCollected = true;
         }
     }
